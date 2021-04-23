@@ -5,6 +5,9 @@ block content
     p= title
     p= message
 
-    button.update Update users
-
-    ul.users
+    ul.products
+      each p in products
+        li
+          img(src=p.images[0].formats.small.url)
+          h4= p.title
+          p= p.description
