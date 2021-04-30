@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_home_settings",
+  "info": {
+    "name": "PageHomeSettings"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}
