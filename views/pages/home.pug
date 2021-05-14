@@ -3,4 +3,7 @@ extends ../_template.pug
 block content
   h3 Одежда
 
-  
+  each p in products
+    div.product-wrapper
+      h3= p.title
+      p= p.description

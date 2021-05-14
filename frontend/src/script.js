@@ -1,7 +1,4 @@
-import calc from './inc'
 import './styles/style.scss'
-
-console.log(calc(4))
 
 // const updateProducts = () => {
 //   fetch('http://localhost:1337/products')

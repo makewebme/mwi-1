@@ -1,8 +1,13 @@
-'use strict';
+'use strict'
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
- * to customize this controller
- */
+const qS = require('query-string')
 
-module.exports = {};
+module.exports = {
+  find: async (ctx) => {
+    const categories = qS.parse(ctx.req._parsedUrl.query).categories
+
+    const fields = await strapi.query('product').find({ category_in: categories.split(',').map(el => +el) })
+
+    ctx.body = fields
+  }
+}

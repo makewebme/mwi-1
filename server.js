@@ -17,16 +17,15 @@ app.use(
 )
 
 app.get('/', async (req, res) => {
-  fetch(`${STRAPI_URL}/page-home-settings?name=category_on_home`)
-    .then((res) => res.json())
-    .then((categoriesOnMain) => {
-      fetch(`${STRAPI_URL}/products?category_contains=${categoriesOnMain[0].value}`)
-        .then((res) => res.json())
-        .then((products) => {
-          console.log(products)
-          res.render('pages/home', { products })
-        })
-    })
+  // const categoriesOnMainRaw = await fetch(`${STRAPI_URL}/page-home-settings?name=category_on_home`)
+  // const categoriesOnMain = await categoriesOnMainRaw.json()
+
+  // const productsRaw = await fetch(`${STRAPI_URL}/products?categories=${categoriesOnMain[0].value}`)
+  const productsRaw = await fetch(`${STRAPI_URL}/products?categories=${req.query.categories}`)
+  const products = await productsRaw.json()
+
+  // console.log(products)
+  return res.render('pages/home', { products })
 })
 
 app.listen(port, () => {
