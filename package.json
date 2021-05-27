@@ -3,7 +3,7 @@
   "scripts": {
     "front": "cd frontend && webpack",
     "back": "cd backend && yarn develop",
-    "server": "nodemon server.js"
+    "server": "nodemon --inspect server.js"
   },
   "dependencies": {
     "express": "^4.17.1",

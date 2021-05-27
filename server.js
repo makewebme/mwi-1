@@ -17,15 +17,13 @@ app.use(
 )
 
 app.get('/', async (req, res) => {
-  // const categoriesOnMainRaw = await fetch(`${STRAPI_URL}/page-home-settings?name=category_on_home`)
-  // const categoriesOnMain = await categoriesOnMainRaw.json()
+  const categoriesOnMainRaw = await fetch(`${STRAPI_URL}/page-home-settings?name=category_on_home`)
+  const categoriesOnMain = await categoriesOnMainRaw.json()
 
-  // const productsRaw = await fetch(`${STRAPI_URL}/products?categories=${categoriesOnMain[0].value}`)
-  const productsRaw = await fetch(`${STRAPI_URL}/products?categories=${req.query.categories}`)
-  const products = await productsRaw.json()
+  const productsOnMainRaw = await fetch(`${STRAPI_URL}/products?categories=${categoriesOnMain[0].value}`)
+  const productsOnMain = await productsOnMainRaw.json()
 
-  // console.log(products)
-  return res.render('pages/home', { products })
+  return res.render('pages/home', { productsOnMain })
 })
 
 app.listen(port, () => {

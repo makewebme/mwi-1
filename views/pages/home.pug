@@ -1,9 +1,15 @@
 extends ../_template.pug
 
 block content
-  h3 Одежда
 
-  each p in products
-    div.product-wrapper
-      h3= p.title
-      p= p.description
+  div.page-home
+    div.cont
+      each productCategory in productsOnMain
+        h3= productCategory.categoryName
+
+        div.products-wrapper
+          each p in productCategory.products
+            div.product-item
+              img.image(src=p.images[0].formats.small.url)
+              h3= p.title
+              p= p.description
