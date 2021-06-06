@@ -11,5 +11,6 @@ block content
           each p in productCategory.products
             div.product-item
               img.image(src=p.images[0].formats.small.url)
-              h3= p.title
+              a(href='/products/' + p.id) #[h3= p.title]
               p= p.description
+              p= p.price

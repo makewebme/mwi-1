@@ -30,6 +30,9 @@
     },
     "category": {
       "model": "category"
+    },
+    "price": {
+      "type": "integer"
     }
   }
 }

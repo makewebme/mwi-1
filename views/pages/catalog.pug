@@ -1,0 +1,16 @@
+extends ../_template.pug
+
+block content
+
+  div.page-catalog
+    div.cont
+      h1 Каталог товаров
+
+      div.categories-wrapper
+        each cat in categories
+          div.category-item
+            a(href='/catalog/' + cat.id)
+              h3= cat.name
+              img.image(src=cat.thumbnail.url)
+
+

@@ -1,0 +1,16 @@
+extends ../_template.pug
+
+block content
+
+  div.page-catalog-products-in-category
+    div.cont
+      each productCategory in productsInCategory
+        h3= productCategory.categoryName
+
+        div.products-wrapper
+          each p in productCategory.products
+            div.product-item
+              img.image(src=p.images[0].formats.small.url)
+              a(href='/products/' + p.id) #[h3= p.title]
+              p= p.description
+              p= p.price

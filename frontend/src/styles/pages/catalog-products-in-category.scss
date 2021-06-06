@@ -1,0 +1,18 @@
+.page-catalog-products-in-category {
+  .products-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .product-item {
+      width: calc(25% - 20px);
+      margin: 0 10px 20px;
+      border: 1px solid #000;
+
+      .image {
+        height: 400px;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

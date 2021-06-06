@@ -1,0 +1,22 @@
+extends ../_template.pug
+
+block content
+
+  div.page-product-details
+    div.cont
+      a(href='/') < Назад
+
+      h1= productDetails.title
+
+      if productDetails.images.length
+        if productDetails.images[0].formats.large
+          img.image(src=productDetails.images[0].formats.large.url)
+        else if productDetails.images[0].formats.medium
+          img.image(src=productDetails.images[0].formats.medium.url)
+        else if productDetails.images[0].formats.small
+          img.image(src=productDetails.images[0].formats.small.url)
+        else
+          img.image(src=productDetails.images[0].formats.thumbnail.url)
+
+      p= productDetails.description
+      p= productDetails.price
